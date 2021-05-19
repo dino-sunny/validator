@@ -9,4 +9,5 @@
     <string name="year">Year</string>
     <string name="next">NEXT</string>
     <string name="no_pan_text">I don\'t have a PAN</string>
+    <string name="info_text">Providing PAN and Date of Birth helps us find and fetch your KYC from a central registry by the Government of India. <a href="http://www.google.com/">Learn more</a></string>
 </resources>
