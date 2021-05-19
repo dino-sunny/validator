@@ -3,7 +3,7 @@ package com.dino.validator.utility
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
-class Validator {
+class Utilities {
 
     companion object {
         //Validate PAN number is valid or not
@@ -12,6 +12,9 @@ class Validator {
             val p: Pattern = Pattern.compile(regex)
             val m: Matcher = p.matcher(panCardNo)
             return m.matches()
+        }
+        fun maxEligibleDate(): Long {
+            return (System.currentTimeMillis()- (1000 * 60 * 60 * 24 * 365.25 * 18)).toLong()
         }
     }
 

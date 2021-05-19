@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.dino.validator.utility.Validator.Companion.isPanNumberValid
+import com.dino.validator.utility.Utilities.Companion.isPanNumberValid
 
 class ValidateViewModel: ViewModel() {
 

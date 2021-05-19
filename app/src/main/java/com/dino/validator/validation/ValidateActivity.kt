@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.dino.validator.R
 import com.dino.validator.databinding.ActivityValidateBinding
+import com.dino.validator.utility.Utilities.Companion.maxEligibleDate
 import java.util.*
 
 class ValidateActivity : AppCompatActivity() {
@@ -47,16 +48,18 @@ class ValidateActivity : AppCompatActivity() {
         })
     }
 
-    private fun pickDate() {
+    fun pickDate() {
         val calendar: Calendar = Calendar.getInstance()
         val mYear = calendar.get(Calendar.YEAR)
         val mMonth = calendar.get(Calendar.MONTH)
         val mDay = calendar.get(Calendar.DAY_OF_MONTH)
-        DatePickerDialog(this, R.style.DialogTheme,
+         val dialog = DatePickerDialog(this, R.style.DialogTheme,
                 { view, year, monthOfYear, dayOfMonth ->
                     viewModel.day.value = (dayOfMonth<10).let { "0$dayOfMonth" }
                     viewModel.month.value = (monthOfYear+1<10).let { "0$monthOfYear" }
                     viewModel.year.value = year.toString()
-                }, mYear, mMonth, mDay).show()
+                }, mYear, mMonth, mDay)
+        dialog.datePicker.maxDate = maxEligibleDate()
+        dialog.show()
     }
 }
