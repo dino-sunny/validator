@@ -1,6 +1,5 @@
 package com.dino.validator
 
-import android.util.Patterns
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
@@ -28,6 +27,7 @@ class ValidateViewModel: ViewModel() {
     val eventDatePicker: LiveData<Boolean>
         get() = _eventDate
 
+    //Validate PAN number is valid or not
     private fun isPanNumberValid(panCardNo: String): Boolean {
         val regex = "[A-Z]{5}[0-9]{4}[A-Z]{1}"
         val p: Pattern = Pattern.compile(regex)
@@ -43,7 +43,7 @@ class ValidateViewModel: ViewModel() {
 
     val isDateValid = MediatorLiveData<Boolean>().apply {
         addSource(day) {
-            value =it.isNotEmpty()
+            value = it.isNotEmpty()
         }
     }
 
