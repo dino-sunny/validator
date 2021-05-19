@@ -54,8 +54,8 @@ class ValidateActivity : AppCompatActivity() {
         val mDay = calendar.get(Calendar.DAY_OF_MONTH)
         DatePickerDialog(this, R.style.DialogTheme,
                 { view, year, monthOfYear, dayOfMonth ->
-                    viewModel.day.value = dayOfMonth.toString()
-                    viewModel.month.value = (monthOfYear+1).toString()
+                    viewModel.day.value = (dayOfMonth<10).let { "0$dayOfMonth" }
+                    viewModel.month.value = (monthOfYear+1<10).let { "0$monthOfYear" }
                     viewModel.year.value = year.toString()
                 }, mYear, mMonth, mDay).show()
     }
