@@ -1,4 +1,4 @@
-package com.dino.validator
+package com.dino.validator.validation
 
 import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import com.dino.validator.R
 import com.dino.validator.databinding.ActivityValidateBinding
 import java.util.*
 
@@ -18,7 +19,7 @@ class ValidateActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_validate)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_validate)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
         setObservers()
@@ -51,7 +52,7 @@ class ValidateActivity : AppCompatActivity() {
         val mYear = calendar.get(Calendar.YEAR)
         val mMonth = calendar.get(Calendar.MONTH)
         val mDay = calendar.get(Calendar.DAY_OF_MONTH)
-        DatePickerDialog(this,R.style.DialogTheme,
+        DatePickerDialog(this, R.style.DialogTheme,
                 { view, year, monthOfYear, dayOfMonth ->
                     viewModel.day.value = dayOfMonth.toString()
                     viewModel.month.value = (monthOfYear+1).toString()

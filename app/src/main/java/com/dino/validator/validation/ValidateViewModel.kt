@@ -1,4 +1,4 @@
-package com.dino.validator
+package com.dino.validator.validation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
