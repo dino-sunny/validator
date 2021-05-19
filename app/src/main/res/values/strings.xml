@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">validator</string>
+    <string name="title_text">First of the few steps to set you up with a Bank Account</string>
+    <string name="logo">Logo Image</string>
+    <string name="pan_number">PAN NUMBER</string>
+    <string name="birth_date">BIRTH DATE</string>
+    <string name="day">Day</string>
+    <string name="month">Month</string>
+    <string name="year">Year</string>
+    <string name="next">NEXT</string>
+    <string name="no_pan_text">I don\'t have a PAN</string>
 </resources>
